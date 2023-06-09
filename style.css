@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Red-errors : hsl(0,100%,66%);
+  --White: hsl(0, 0%, 100%);
+  --Light-Grayish-violet: hsl(270, 3%, 87%);
+  --Dark-Grayish-violet: hsl(279, 6%, 55%);
+  --Very-Dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  background-color: var(--White);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem;
+  background-image: url(/images/bg-main-mobile.png);
+  background-repeat: no-repeat;
+  background-size: 100% 15rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.cards .front-card {
+  background-image: url('/images/bg-card-front.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.cards .front-card h1 {
+  color: var(--White);
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
+.cards .front-card .card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.cards .front-card .card-info span {
+  color: var(--White);
+  font-size: .8rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+}
+
+.cards .back-card {
+  width: 400px;
+  position: relative;
+}
+
+.cards .back-card span {
+  position: absolute;
+  color: var(--White);
+  top: 48%;
+  left: 83%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1rem;
+}
+
+
+
+.cards .front-card h1 {
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+
+
+
+.cards .back-card {
+  align-self: flex-end;
+  width: 350px;
+  transform: translate(3rem,-.5rem);
+}
+
+.cards .front-card {
+  width: 380px;
+  transform: translate(-3rem,-7rem);
+  z-index: 1;  
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  margin-top: -4rem;
+  margin-left: -2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+form .input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+form .input-container label {
+  color: var(--Very-Dark-violet);
+  font-weight: 500;
+  font-size: .9rem;
+  letter-spacing: .1rem;
+}
+
+form .input-container input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  width: 100%;
+  padding: .8rem;
+  border-radius: .5rem;
+  border: 2px solid var(--Light-Grayish-violet);
+  outline: none;
+  transition: all .3s;
+}
+
+form .input-container input.error {
+  border: 2px solid var(--Red-errors);  
+}
+
+
+
+form .input-container .exp-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5rem;
+}
+
+
+
+form .input-container .exp-date div {
+  display: flex;
+  gap: 1rem;
+}
+
+form .input-container .exp-date div input {
+  width: 80px;
+}
+
+form .input-container:nth-child(3) {
+  flex-direction: row;
+}
+
+form .input-container .cvc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .5rem;
+}
+
+form .input-container span.error-message {
+  color: var(--Red-errors);
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+form button {
+  margin-top: .8rem;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: .5rem;
+  border: none;
+  outline: none;
+  background-color: var(--Very-Dark-violet);
+  color: var(--White);
+  font-weight: 500;
+  letter-spacing: .1rem;
+  cursor: pointer;
+  transition: all .3s linear;
+}
+
+form button:hover {
+ opacity: .7;
+}
+
+@media all and (min-width: 1080px)
+{
+  body {
+    min-height: 100vh;
+    background-image: url('/images/bg-main-desktop.png');
+    background-size: 30rem 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10rem;
+  }
+
+  .cards {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .cards .front-card {
+    transform: translate(-2rem,0);
+    width: 470px;
+  }
+
+
+  .cards .front-card h1 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  }
+
+  .cards .back-card {
+    transform: translate(5rem,0);
+    width: 500px;
+  }
+
+  .cards .back-card span {
+    font-size: 1.3rem;
+    left: 75%;
+  }
+
+  form {
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    max-width: 500px;
+  }
+
+
+  form .input-container .cvc {
+    justify-content: flex-start;
+  }
+
+
+}
+
+form .success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+form .success h1 {
+  color: var(--Very-Dark-violet);
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: .3rem;
+  margin-top: 3rem;
+  margin-bottom: .8rem;
+}
+
+form .success p {
+  color: var(--Dark-Grayish-violet);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: .1rem;
+  text-align: center;
+}
+
+form .success button {
+  margin-top: 4rem;
+}
+
+.hide {
+  display: none !important;
+}
+
+@media all and (max-width: 400px)
+{
+  .cards .front-card {
+    transform: translate(-1rem,-4rem);
+    width: 280px;
+    padding: 1rem 1rem;
+  }
+
+  .cards .back-card {
+    transform: translate(.5rem,0);
+    width: 250px;
+  }
+
+  .cards .back-card span {
+    font-size: 1rem;
+    left: 80%;
+  }
+
+  .cards .front-card h1 {
+    font-size: .8rem;
+  }
+
+  .cards .front-card .card-info span {
+    font-size: .6rem;
+  }
+
+  form {
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  form .success h1 {
+    font-size: 1.5rem;
+  }
+
+  form .success p {
+    font-size: .8rem;
+  }
+}
